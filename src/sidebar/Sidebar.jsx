@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Sidebar = ({
   notes,
   onAddNote,
@@ -16,7 +18,7 @@ const Sidebar = ({
       <div className="app-sidebar-notes">
         {sortedNotes.map(({ id, title, body, lastModified }, i) => (
           <div
-            className={`app-sidebar-note ${id === activeNote && "active"}`}
+            className={`app-sidebar-note ${id === activeNote && 'active'}`}
             onClick={() => setActiveNote(id)}
           >
             <div className="sidebar-note-title">
@@ -24,12 +26,12 @@ const Sidebar = ({
               <button onClick={(e) => onDeleteNote(id)}>Delete</button>
             </div>
 
-            <p>{body && body.substr(0, 100) + "..."}</p>
+            <p>{body && body.substr(0, 100) + '...'}</p>
             <small className="note-meta">
-              Last Modified{" "}
-              {new Date(lastModified).toLocaleDateString("en-GB", {
-                hour: "2-digit",
-                minute: "2-digit",
+              Last Modified{' '}
+              {new Date(lastModified).toLocaleDateString('en-GB', {
+                hour: '2-digit',
+                minute: '2-digit',
               })}
             </small>
           </div>
